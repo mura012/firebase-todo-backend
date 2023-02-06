@@ -12,3 +12,4 @@ router.get("/", tasks_1.getAllTasks);
 router.post("/", tasks_1.createTask);
 router.patch("/:id", tasks_1.updateTask);
 router.delete("/:id", tasks_1.deleteTask);
+//# sourceMappingURL=tasks.js.map

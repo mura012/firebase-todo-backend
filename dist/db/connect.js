@@ -14,3 +14,4 @@ const connectDB = (url) => {
         .catch((err) => console.log(err));
 };
 exports.connectDB = connectDB;
+//# sourceMappingURL=connect.js.map

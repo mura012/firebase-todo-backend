@@ -27,3 +27,4 @@ const schema = new mongoose_1.default.Schema({
 });
 const TaskSchema = mongoose_1.default.model("Task", schema);
 exports.TaskSchema = TaskSchema;
+//# sourceMappingURL=Task.js.map
