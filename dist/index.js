@@ -12,7 +12,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 8000;
 app.use((0, cors_1.default)({
-    origin: process.env.PORT || "https://firebase-todo-frontend.vercel.app/",
+    origin: process.env.FRONT_APP || "http://localhost:3000",
 }));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));

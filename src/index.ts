@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8000;
 
 app.use(
   cors({
-    origin: process.env.PORT || "https://firebase-todo-frontend.vercel.app/",
+    origin: process.env.FRONT_APP || "http://localhost:3000",
   })
 );
 
