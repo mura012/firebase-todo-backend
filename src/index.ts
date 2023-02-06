@@ -3,9 +3,9 @@ import { connectDB } from "./db/connect";
 import dotenv from "dotenv";
 import { router as taskRoute } from "./routes/tasks";
 import cors from "cors";
-const app: Application = express();
-const PORT = 8000;
 dotenv.config();
+const app: Application = express();
+const PORT = process.env.PORT || 8000;
 
 app.use(
   cors({
