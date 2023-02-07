@@ -16,11 +16,6 @@ app.use((0, cors_1.default)({
 }));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.get("/", async (req, res) => {
-    return res.status(200).send({
-        message: "Hello",
-    });
-});
 app.use("/api/tasks", tasks_1.router);
 const start = async () => {
     if (process.env.DATABASE_URL) {

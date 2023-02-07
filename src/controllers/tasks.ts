@@ -16,6 +16,16 @@ const createTask = async (req: Request, res: Response) => {
     res.status(500).json(err);
   }
 };
+const deleteAllTask = async (req: Request, res: Response) => {
+  try {
+    const deleteAllTask = await TaskSchema.deleteMany({
+      userId: req.body.userId,
+    });
+    res.status(200).json(deleteAllTask);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
 const deleteTask = async (req: Request, res: Response) => {
   try {
     const deleteTask = await TaskSchema.deleteOne({ _id: req.params.id });
@@ -38,4 +48,4 @@ const updateTask = async (req: Request, res: Response) => {
   }
 };
 
-export { getAllTasks, createTask, deleteTask, updateTask };
+export { getAllTasks, createTask, deleteAllTask, deleteTask, updateTask };

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateTask = exports.deleteTask = exports.createTask = exports.getAllTasks = void 0;
+exports.updateTask = exports.deleteTask = exports.deleteAllTask = exports.createTask = exports.getAllTasks = void 0;
 const Task_1 = require("../models/Task");
 const getAllTasks = async (req, res) => {
     try {
@@ -22,6 +22,18 @@ const createTask = async (req, res) => {
     }
 };
 exports.createTask = createTask;
+const deleteAllTask = async (req, res) => {
+    try {
+        const deleteAllTask = await Task_1.TaskSchema.deleteMany({
+            userId: req.body.userId,
+        });
+        res.status(200).json(deleteAllTask);
+    }
+    catch (err) {
+        res.status(500).json(err);
+    }
+};
+exports.deleteAllTask = deleteAllTask;
 const deleteTask = async (req, res) => {
     try {
         const deleteTask = await Task_1.TaskSchema.deleteOne({ _id: req.params.id });

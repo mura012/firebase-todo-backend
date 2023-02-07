@@ -16,12 +16,6 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", async (req: Request, res: Response) => {
-  return res.status(200).send({
-    message: "Hello",
-  });
-});
-
 app.use("/api/tasks", taskRoute);
 
 const start = async () => {

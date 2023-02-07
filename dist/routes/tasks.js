@@ -11,5 +11,6 @@ exports.router = router;
 router.get("/", tasks_1.getAllTasks);
 router.post("/", tasks_1.createTask);
 router.patch("/:id", tasks_1.updateTask);
+router.delete("/all", tasks_1.deleteAllTask);
 router.delete("/:id", tasks_1.deleteTask);
 //# sourceMappingURL=tasks.js.map
