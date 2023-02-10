@@ -49,7 +49,7 @@ exports.createTask = createTask;
 const deleteAllTask = async (req, res) => {
     try {
         const deleteAllTask = await Task_1.TaskSchema.deleteMany({
-            userId: req.body.userId,
+            _id: req.body._id,
         });
         res.status(200).json(deleteAllTask);
     }
