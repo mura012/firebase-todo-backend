@@ -1,16 +1,22 @@
 import express from "express";
 import {
+  getRecordsByAdminEmail,
+  addTask,
   createTask,
   deleteAllTask,
   deleteTask,
-  getAllTasks,
+  getRecordByName,
+  getRecordsByEmail,
   updateTask,
 } from "../controllers/tasks";
 const router = express.Router();
 
-router.get("/", getAllTasks);
+router.get("/adminTasks/:adminEmail", getRecordsByAdminEmail);
+router.get("/myTasks/:email", getRecordsByEmail);
+router.get("/myTask/:name", getRecordByName);
 router.post("/", createTask);
-router.patch("/:id", updateTask);
+router.patch("/update/:id", updateTask);
+router.patch("/add/:id", addTask);
 router.delete("/all", deleteAllTask);
 router.delete("/:id", deleteTask);
 
