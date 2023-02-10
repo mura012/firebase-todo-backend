@@ -8,9 +8,12 @@ const express_1 = __importDefault(require("express"));
 const tasks_1 = require("../controllers/tasks");
 const router = express_1.default.Router();
 exports.router = router;
-router.get("/", tasks_1.getAllTasks);
+router.get("/adminTasks/:adminEmail", tasks_1.getRecordsByAdminEmail);
+router.get("/myTasks/:email", tasks_1.getRecordsByEmail);
+router.get("/myTask/:name", tasks_1.getRecordByName);
 router.post("/", tasks_1.createTask);
-router.patch("/:id", tasks_1.updateTask);
+router.patch("/update/:id", tasks_1.updateTask);
+router.patch("/add/:id", tasks_1.addTask);
 router.delete("/all", tasks_1.deleteAllTask);
 router.delete("/:id", tasks_1.deleteTask);
 //# sourceMappingURL=tasks.js.map
