@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addTask = exports.updateTask = exports.deleteTask = exports.deleteAllTask = exports.createTask = exports.getRecordByName = exports.getRecordsByEmail = exports.getRecordsByAdminEmail = void 0;
+exports.updateTask = exports.deleteTask = exports.deleteAllTask = exports.createTask = exports.getRecordByName = exports.getRecordsByEmail = exports.getRecordsByAdminEmail = void 0;
 const Task_1 = require("../models/Task");
 const getRecordsByEmail = async (req, res) => {
     try {
@@ -80,16 +80,4 @@ const updateTask = async (req, res) => {
     }
 };
 exports.updateTask = updateTask;
-const addTask = async (req, res) => {
-    try {
-        const updateTask = await Task_1.TaskSchema.updateOne({
-            _id: req.params.id,
-        }, req.body);
-        res.status(200).json(updateTask);
-    }
-    catch (err) {
-        res.status(500).json(err);
-    }
-};
-exports.addTask = addTask;
 //# sourceMappingURL=tasks.js.map
